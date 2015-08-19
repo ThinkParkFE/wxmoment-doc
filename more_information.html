@@ -4,19 +4,22 @@
     <meta charset="utf-8">
     <meta name=renderer content=webkit>
     
-    <title>常见问题答疑 | 微信朋友圈广告规范</title>
+    <title>视觉交互规范/详情页规范 | 微信朋友圈广告规范</title>
     
     <meta name="author" content="WXG_OPB_Design">
     
     
     <meta name="description"
-          content="1） 如果我们要上传视频，谁来上传？自己上传到腾讯视频即可（不允许其他视频网站），上传后请把vid告知接口人，后台需要做配置工作；
-2） 我的视频是保密的，希望在投放前才上传怎么办？可以先开发H5并提测，里面的视频使用示例代码的视频即可。待H5所有问题解决完毕后，在投放前的最后一个工作日将视频上传到">
+          content="详情页通用规范
+允许用户分享广告详情页，但不得有诱导分享、诱导关注等页面提示内容；
+使用用户关系链进行的互动分享，需要注意分享逻辑的完整性；
+详情页如使用背景音乐，则必须支持音乐可循环及可关闭（关闭按钮采用模版样式），并采用渐强（音乐逐渐变大）的方式出现；
+详情页如使用视频文件，需先上传至腾讯视频。">
     
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:title" content="常见问题答疑"/>
+    <meta property="og:title" content="视觉交互规范/详情页规范"/>
     
     <meta property="og:site_name" content="微信朋友圈广告规范"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -89,7 +92,7 @@
                             
                         </li>
                         
-                        <li class="menu_primary_item selected ">
+                        <li class="menu_primary_item ">
                             
                             <a class="menu_primary_link" title="常见问题答疑" href="./faq.html"><strong>常见问题答疑</strong> </a>
                             
@@ -102,12 +105,33 @@
             <div class="col_main">
                 <div class="inner">
                     <div class="yue">
-    <h1 class="page-title">常见问题答疑</h1>
-    <p><strong>1） 如果我们要上传视频，谁来上传？</strong><br>自己上传到腾讯视频即可（不允许其他视频网站），上传后请把vid告知接口人，后台需要做配置工作；</p>
-<p><strong>2） 我的视频是保密的，希望在投放前才上传怎么办？</strong><br>可以先开发H5并提测，里面的视频使用示例代码的视频即可。待H5所有问题解决完毕后，在投放前的最后一个工作日将视频上传到腾讯视频，然后把代码中的视频替换掉，重新提交H5文件即可；</p>
-<p><strong>3） 没有iPhone4/4s测试机，如何进行适配工作？</strong><br>可以借助Chrome进行测试，进入Chrome，按F12，进入调试模式，点击调试工具左上角的手机图标，可以模拟手机的展示效果，在左侧下拉列表中选择iPhone4即可体验；<br><img src="images/faq-1.png" alt=""></p>
-<p><strong>4） 我想统计进入每一页PV，如何统计？</strong><br>可以在用户翻页的时候，调用我们提供的示范代码中——<a href="WxMoment.html#数据统计">数据统计——自定义事件统计</a>的代码，发送统计事件即可，即可统计用户翻页的操作（相当于统计了进入了翻页后用户所看到页面的PV）。<br>请注意，每一页的统计，事件名称参数要不同，否则数据会混在一起，导致无法区分是那一页的数据；<br>另外，如果添加了统计，请同步提供参数和统计事件的对应表格，我们要在测试阶段进行验证；</p>
-<p><strong>5） 我想统计视频的播放次数，播放完成次数？</strong><br>当视频开始播放时和视频播放完成时，调用我们提供的示范代码中——<a href="WxMoment.html#数据统计">数据统计——自定义事件统计</a>的代码，发送统计事件即可。<br>请同样提供统计代码列表和事件列表，方便我们在测试阶段进行验收。</p>
+    <h1 class="page-title">视觉交互规范/详情页规范</h1>
+    <h3 id="详情页通用规范">详情页通用规范</h3><ul>
+<li>允许用户分享广告详情页，但不得有诱导分享、诱导关注等页面提示内容；</li>
+<li>使用用户关系链进行的互动分享，需要注意分享逻辑的完整性；</li>
+<li>详情页如使用背景音乐，则必须支持音乐可循环及可关闭（关闭按钮采用模版样式），并采用渐强（音乐逐渐变大）的方式出现；</li>
+<li>详情页如使用视频文件，需先上传至腾讯视频。广告详情页仅支持使用腾讯视频的视频内容；如视频总长度超过1分钟，需要再底部加上“建议在WIFI下加载播放”提示；</li>
+<li>对页面的加载时间进行监控，加载耗时过长时，给予用户友好的提示；</li>
+<li>非 WIFI 环境下时的提示建议：复杂交互页面若流量消耗会很大时，建议对用户进行友好的提示，可能会消耗较多流量；</li>
+</ul>
+<h3 id="详情页支持形式">详情页支持形式</h3><ul>
+<li>√ 品牌活动</li>
+<li>√ 微信小店</li>
+<li>√ 微信表情</li>
+<li>× APP 下载（后续支持）</li>
+<li>× H5 小游戏（后续支持）</li>
+<li>× 微信红包</li>
+</ul>
+<h3 id="详情页实现">详情页实现</h3><ul>
+<li>详情页交互简洁，重点展示图片创意，可以考虑在【朋友圈广告自助投放端】根据模板生成详情页。参考<a href="https://wximg.qq.com/tmt/wxmoment/template.html">模板详情页规范</a></li>
+<li>交互形式个性化，互动元素丰富，需自行开发自定义详情页。为了提高开发效率，建议按照微信广告“<a href="https://wximg.qq.com/tmt/wxmoment/workflow.html">自定义详情页前端工作流</a>”，使用“<a href="https://wximg.qq.com/tmt/wxmoment/WxMoment.html">自定义详情页前端通用库</a>”，保证<a href="https://wximg.qq.com/tmt/wxmoment/dev.html">详情页符合技术规范</a></li>
+</ul>
+<h3 id="音乐键按钮图片规范">音乐键按钮图片规范</h3><ul>
+<li>详情页如使用背景音乐，则必须支持音乐可循环及可关闭，并采用渐强（音乐逐渐变大）的方式出现；</li>
+<li>音乐播放/关闭按钮，必须参照规范，并放置于页面左上角位置，详细参考下图。</li>
+<li>点此下载<a href="files/template-music-icon-psd.zip">音乐iconPSD文件</a>。</li>
+</ul>
+<p><img src="images/template-music-icon.jpg" alt=""></p>
 
 </div>
                 </div>

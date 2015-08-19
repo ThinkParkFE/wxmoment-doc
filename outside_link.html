@@ -4,19 +4,24 @@
     <meta charset="utf-8">
     <meta name=renderer content=webkit>
     
-    <title>常见问题答疑 | 微信朋友圈广告规范</title>
+    <title>视觉交互规范/外链规范 | 微信朋友圈广告规范</title>
     
     <meta name="author" content="WXG_OPB_Design">
     
     
     <meta name="description"
-          content="1） 如果我们要上传视频，谁来上传？自己上传到腾讯视频即可（不允许其他视频网站），上传后请把vid告知接口人，后台需要做配置工作；
-2） 我的视频是保密的，希望在投放前才上传怎么办？可以先开发H5并提测，里面的视频使用示例代码的视频即可。待H5所有问题解决完毕后，在投放前的最后一个工作日将视频上传到">
+          content="当前优质落地页广告支持外链至广告品牌网站、电商购买页面。
+压力测试标准
+要求外链页面支持每秒至少1500次的访问压力，每次访问的响应时间200ms以内。
+需使用用ad（ApacheBench）分开跑每个请求，关注并发请求和响应时间是否达标，并提供测试报告。
+
+电商购买页面规范
+电商链接必须支持“微信">
     
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:title" content="常见问题答疑"/>
+    <meta property="og:title" content="视觉交互规范/外链规范"/>
     
     <meta property="og:site_name" content="微信朋友圈广告规范"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,7 +61,7 @@
                                     <a class="menu_primary_link" title="详情页规范" href="./more_infomation.html" style="margin-left: 30px;"><strong>详情页规范</strong> </a>
                                 </li>
                             
-                                <li class="menu_primary_item ">
+                                <li class="menu_primary_item selected ">
                                     <a class="menu_primary_link" title="外链规范" href="./outside_link.html" style="margin-left: 30px;"><strong>外链规范</strong> </a>
                                 </li>
                             
@@ -89,7 +94,7 @@
                             
                         </li>
                         
-                        <li class="menu_primary_item selected ">
+                        <li class="menu_primary_item ">
                             
                             <a class="menu_primary_link" title="常见问题答疑" href="./faq.html"><strong>常见问题答疑</strong> </a>
                             
@@ -102,12 +107,19 @@
             <div class="col_main">
                 <div class="inner">
                     <div class="yue">
-    <h1 class="page-title">常见问题答疑</h1>
-    <p><strong>1） 如果我们要上传视频，谁来上传？</strong><br>自己上传到腾讯视频即可（不允许其他视频网站），上传后请把vid告知接口人，后台需要做配置工作；</p>
-<p><strong>2） 我的视频是保密的，希望在投放前才上传怎么办？</strong><br>可以先开发H5并提测，里面的视频使用示例代码的视频即可。待H5所有问题解决完毕后，在投放前的最后一个工作日将视频上传到腾讯视频，然后把代码中的视频替换掉，重新提交H5文件即可；</p>
-<p><strong>3） 没有iPhone4/4s测试机，如何进行适配工作？</strong><br>可以借助Chrome进行测试，进入Chrome，按F12，进入调试模式，点击调试工具左上角的手机图标，可以模拟手机的展示效果，在左侧下拉列表中选择iPhone4即可体验；<br><img src="images/faq-1.png" alt=""></p>
-<p><strong>4） 我想统计进入每一页PV，如何统计？</strong><br>可以在用户翻页的时候，调用我们提供的示范代码中——<a href="WxMoment.html#数据统计">数据统计——自定义事件统计</a>的代码，发送统计事件即可，即可统计用户翻页的操作（相当于统计了进入了翻页后用户所看到页面的PV）。<br>请注意，每一页的统计，事件名称参数要不同，否则数据会混在一起，导致无法区分是那一页的数据；<br>另外，如果添加了统计，请同步提供参数和统计事件的对应表格，我们要在测试阶段进行验证；</p>
-<p><strong>5） 我想统计视频的播放次数，播放完成次数？</strong><br>当视频开始播放时和视频播放完成时，调用我们提供的示范代码中——<a href="WxMoment.html#数据统计">数据统计——自定义事件统计</a>的代码，发送统计事件即可。<br>请同样提供统计代码列表和事件列表，方便我们在测试阶段进行验收。</p>
+    <h1 class="page-title">视觉交互规范/外链规范</h1>
+    <p>当前优质落地页广告支持外链至广告品牌网站、电商购买页面。</p>
+<h3 id="压力测试标准">压力测试标准</h3><ul>
+<li>要求外链页面支持每秒至少1500次的访问压力，每次访问的响应时间200ms以内。</li>
+<li>需使用用ad（ApacheBench）分开跑每个请求，关注并发请求和响应时间是否达标，并提供测试报告。</li>
+</ul>
+<h3 id="电商购买页面规范">电商购买页面规范</h3><ul>
+<li>电商链接必须支持“微信支付”“微信登陆”体验；</li>
+<li>优先选择大型B2C平台、成熟的微商城平台支持电商链接，更好地承载朋友圈的海量并发流量，以保证用户的体验；</li>
+<li>外链建议到单品页或是制作精良的landing页。保证第一屏均为品牌及相关商品的信息，无非相关信息露出（如电商平台的Titlebar、返回、个人中心等内容），减少用户的跳失率；</li>
+<li>做好单品、landing页商品的促销售卖策略、标题商详促销等信息的优化，减少页面内的SKU量，集中突出售卖最核心的SKU；活动期间保证投放地区的备货量；</li>
+<li>电商链接需在提交方案的同时提交一通审核把关。</li>
+</ul>
 
 </div>
                 </div>
