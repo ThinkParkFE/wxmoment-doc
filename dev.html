@@ -4,22 +4,25 @@
     <meta charset="utf-8">
     <meta name=renderer content=webkit>
     
-    <title>视觉交互规范/详情页规范 | 微信朋友圈广告规范</title>
+    <title>开发规范/自定义详情页技术规范 | 微信朋友圈广告规范</title>
     
     <meta name="author" content="WXG_OPB_Design">
     
     
     <meta name="description"
-          content="详情页通用规范
-允许用户分享广告详情页，但不得有诱导分享、诱导关注等页面提示内容；
-使用用户关系链进行的互动分享，需要注意分享逻辑的完整性；
-详情页如使用背景音乐，则必须支持音乐可循环及可关闭（关闭按钮采用模版样式），并采用渐强（音乐逐渐变大）的方式出现；
-详情页如使用视频文件，需先上传至腾讯视频。">
+          content="兼容目标
+主流移动设备：iPad 2+，iPhone 4+ ，三星、魅族、华为、红米、小米1S 以上及主流 Android 千元机型；请特别关注iPhone4/4s、魅族MX4、华为P6等机型
+
+操作系统：iOS 7.0+ 与 Android 4.0+；
+
+
+加载速度、请求数与资源压缩
+以 3G 网">
     
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:title" content="视觉交互规范/详情页规范"/>
+    <meta property="og:title" content="开发规范/自定义详情页技术规范"/>
     
     <meta property="og:site_name" content="微信朋友圈广告规范"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,7 +59,7 @@
                             <a class="menu_primary_link" title="外层方案规范" href="./outside.html" style="margin-left: 30px;"><strong>外层方案规范</strong> </a>
                         </li>
                         
-                        <li class="menu_primary_item selected ">
+                        <li class="menu_primary_item ">
                             <a class="menu_primary_link" title="详情页规范" href="./more_information.html" style="margin-left: 30px;"><strong>详情页规范</strong> </a>
                         </li>
                         
@@ -79,7 +82,7 @@
                             
                         </li>
                         
-                        <li class="menu_primary_item ">
+                        <li class="menu_primary_item selected ">
                             <a class="menu_primary_link" title="自定义详情页技术规范" href="./dev.html" style="margin-left: 30px;"><strong>自定义详情页技术规范</strong> </a>
                         </li>
                         
@@ -105,33 +108,97 @@
             <div class="col_main">
                 <div class="inner">
                     <div class="yue">
-    <h1 class="page-title">视觉交互规范/详情页规范</h1>
-    <h3 id="详情页通用规范">详情页通用规范</h3><ul>
-<li>允许用户分享广告详情页，但不得有诱导分享、诱导关注等页面提示内容；</li>
-<li>使用用户关系链进行的互动分享，需要注意分享逻辑的完整性；</li>
-<li>详情页如使用背景音乐，则必须支持音乐可循环及可关闭（关闭按钮采用模版样式），并采用渐强（音乐逐渐变大）的方式出现；</li>
-<li>详情页如使用视频文件，需先上传至腾讯视频。广告详情页仅支持使用腾讯视频的视频内容；如视频总长度超过1分钟，需要再底部加上“建议在WIFI下加载播放”提示；</li>
-<li>对页面的加载时间进行监控，加载耗时过长时，给予用户友好的提示；</li>
-<li>非 WIFI 环境下时的提示建议：复杂交互页面若流量消耗会很大时，建议对用户进行友好的提示，可能会消耗较多流量；</li>
+    <h1 class="page-title">开发规范/自定义详情页技术规范</h1>
+    <h3 id="兼容目标">兼容目标</h3><ul>
+<li><p>主流移动设备：iPad 2+，iPhone 4+ ，三星、魅族、华为、红米、小米1S 以上及主流 Android 千元机型；<strong>请特别关注iPhone4/4s、魅族MX4、华为P6等机型</strong></p>
+</li>
+<li><p>操作系统：iOS 7.0+ 与 Android 4.0+；</p>
+</li>
 </ul>
-<h3 id="详情页支持形式">详情页支持形式</h3><ul>
-<li>√ 品牌活动</li>
-<li>√ 微信小店</li>
-<li>√ 微信表情</li>
-<li>× APP 下载（后续支持）</li>
-<li>× H5 小游戏（后续支持）</li>
-<li>× 微信红包</li>
+<h3 id="加载速度、请求数与资源压缩">加载速度、请求数与资源压缩</h3><ul>
+<li>以 3G 网络环境 100kb/s 的网络速度计算，详情页首次加载过程中，可以在 <strong>2s</strong> 内看到 Loading 页面；</li>
+<li>原则上页面中不超过 1 个的样式文件请求、2 个的脚本文件网络请求；</li>
+<li>图片资源应当进行压缩，JPG 图片使用 80% 以下质量，PNG 图片使用 <a href="http://tinypng.com" target="_blank" rel="external">TinyPNG</a> 进行压缩；</li>
+<li>详情页平均单页资源不超过 300 KB，总资源包大小不超过页数乘以300KB（不包括视频资源）；</li>
+<li>应当对小图片进行 <a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/CSS_Image_Sprites" target="_blank" rel="external">CSS 雪碧图</a> 合并，因低版本系统及低端设备渲染问题，单张图片尺寸不超过 2000x2000 像素，超过时需切分成多张雪碧图；</li>
 </ul>
-<h3 id="详情页实现">详情页实现</h3><ul>
-<li>详情页交互简洁，重点展示图片创意，可以考虑在【朋友圈广告自助投放端】根据模板生成详情页。参考<a href="https://wximg.qq.com/tmt/wxmoment/template.html">模板详情页规范</a></li>
-<li>交互形式个性化，互动元素丰富，需自行开发自定义详情页。为了提高开发效率，建议按照微信广告“<a href="https://wximg.qq.com/tmt/wxmoment/workflow.html">自定义详情页前端工作流</a>”，使用“<a href="https://wximg.qq.com/tmt/wxmoment/WxMoment.html">自定义详情页前端通用库</a>”，保证<a href="https://wximg.qq.com/tmt/wxmoment/dev.html">详情页符合技术规范</a></li>
+<p><strong>资源文件格式标准</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">文件类似</th>
+<th style="text-align:left">格式</th>
+<th style="text-align:left">大小</th>
+<th style="text-align:left">其它备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">背景音乐</td>
+<td style="text-align:left">mp3</td>
+<td style="text-align:left">小于 80 KB</td>
+<td style="text-align:left">开头和结尾音轨建议做使用淡入淡出处理</td>
+</tr>
+<tr>
+<td style="text-align:left">分享缩略图</td>
+<td style="text-align:left">jpg</td>
+<td style="text-align:left">小于 6 KB</td>
+<td style="text-align:left">尺寸为 120x120 像素</td>
+</tr>
+<tr>
+<td style="text-align:left">视频文件</td>
+<td style="text-align:left">mov/mp4/avi</td>
+<td style="text-align:left">暂无要求</td>
+<td style="text-align:left">分辨率&gt;=960×540，视频码率&gt;=1500kbps，画面比例 4:3或16:9</td>
+</tr>
+</tbody>
+</table>
+<h3 id="资源部署">资源部署</h3><ul>
+<li>详情页应只包含静态文件资源，涉及数据交互使用 AJAX 进行数据提交；</li>
+<li>详情页所有资源上线前将部署到腾讯服务器；</li>
+<li>不允许在页面中添加非腾讯域名的资源；</li>
+<li>若页面中包括视频，自行上传视频至腾讯视频服务器，告知视频地址；</li>
 </ul>
-<h3 id="音乐键按钮图片规范">音乐键按钮图片规范</h3><ul>
-<li>详情页如使用背景音乐，则必须支持音乐可循环及可关闭，并采用渐强（音乐逐渐变大）的方式出现；</li>
-<li>音乐播放/关闭按钮，必须参照规范，并放置于页面左上角位置，详细参考下图。</li>
-<li>点此下载<a href="files/template-music-icon-psd.zip">音乐iconPSD文件</a>。</li>
+<h3 id="自测与提测申请">自测与提测申请</h3><ul>
+<li>至少提前 <strong>5 个工作日</strong> 提供到微信侧；</li>
+<li>提交微信团队测试前，请做好自测，并填写自测列表（<a href="http://mp.weixin.qq.com/promotion/res/standard/files/test.xls" target="_blank" rel="external">下载自测列表</a>）；</li>
+<li>微信广告测试团队将会进行全面测试，发现问题后反馈给广告客户进行优化修复，直至详情页质量符合要求；</li>
 </ul>
-<p><img src="images/template-music-icon.jpg" alt=""></p>
+<p><strong>提测申请及部署申请邮件内容</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">内容</th>
+<th style="text-align:left">要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">基本信息</td>
+<td style="text-align:left">公众号名称、微信号、AppID、原始ID</td>
+</tr>
+<tr>
+<td style="text-align:left">需求文档</td>
+<td style="text-align:left">包括功能点列表和说明，产品流程图</td>
+</tr>
+<tr>
+<td style="text-align:left">修改说明</td>
+<td style="text-align:left">非首次提交时，需要详细说明本次提测修复的缺陷以及修复方案</td>
+</tr>
+<tr>
+<td style="text-align:left">自测报告</td>
+<td style="text-align:left">报告需包含主流移动设备、主流操作系统中的测试情况，以及填写好的自测列表</td>
+</tr>
+<tr>
+<td style="text-align:left">源代码压缩包</td>
+<td style="text-align:left">以 ZIP 格式压缩（不得包含空文件，.svn/.git/.DS_Store/Thumbs.db/.log 等系统文件）。</td>
+</tr>
+<tr>
+<td style="text-align:left">广告详情页地址</td>
+<td style="text-align:left">若使用了微信授权登录，为方便测试，提供无需微信登录也可进行测试的地址</td>
+</tr>
+</tbody>
+</table>
 
 </div>
                 </div>
